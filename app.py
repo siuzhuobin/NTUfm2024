@@ -20,3 +20,5 @@ def prediction_result_DBS():
 
 if __name__ == "__main__": # apparently, this checks if the thingy is being run onto the cloud? 
     app.run()
+
+# bleh
