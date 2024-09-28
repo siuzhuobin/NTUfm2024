@@ -2,7 +2,8 @@ from flask import Flask, render_template, request
 import google.generativeai as genai
 
 model = genai.GenerativeModel('gemini-1.5-flash')
-genai.configure(api_key="AIzaSyDQvy9nXbikgMd890MAyt-penTiMoM7Vek")
+
+genai.configure(api_key=os.getenv("MAKERSUITE"))
 
 
 
