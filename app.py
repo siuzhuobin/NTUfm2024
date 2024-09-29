@@ -20,13 +20,6 @@ def index():
 def prediction_DBS():
     return(render_template("prediction_DBS.html"))
 
-'''
-@app.route("/q1", methods=["GET","POST"])  
-def q1():
-    r = model.generate_content("How should i diversify my investment portfolio?")
-    return(render_template("q1_reply.html",r=r.text))
-'''
-
 @app.route("/q<int:qn_no>", methods=["GET","POST"])  
 def ans_qn(qn_no):
     if (qn_no == 2):
@@ -48,4 +41,3 @@ def faq():
 if __name__ == "__main__": # apparently, this checks if the thingy is being run onto the cloud? 
     app.run()
 
-# okiedokie lemme see if it's possible to deliberately break a GIT thingy haha
