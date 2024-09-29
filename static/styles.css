@@ -35,14 +35,19 @@ form {
 input[type="submit"] {
     background-color: #007bff;
     color: white;
-    padding: 12px 24px;
+    padding: 12px; /* Reduced padding to make more room for text */
     border: none;
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
-    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow */
+    word-break: break-word; /* Allow long words to break */
+    text-align: center; /* Center text */
 }
 
 input, button {

@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import google.generativeai as genai
 import os
+import markdown
+
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
@@ -18,16 +20,25 @@ def index():
 def prediction_DBS():
     return(render_template("prediction_DBS.html"))
 
+'''
 @app.route("/q1", methods=["GET","POST"])  
 def q1():
     r = model.generate_content("How should i diversify my investment portfolio?")
     return(render_template("q1_reply.html",r=r.text))
+'''
 
-@app.route("/q2", methods=["GET","POST"])  
-def q2():
-    q = request.form.get('q')
+@app.route("/q<int:qn_no>", methods=["GET","POST"])  
+def ans_qn(qn_no):
+    if (qn_no == 2):
+        q = request.form.get('q')
+    elif (qn_no == 1):
+        q = "How should I diversify my investment portfolio?"
+    else:
+        return
+    
     r = model.generate_content(q)    
-    return(render_template("q2_reply.html",r=r.text))
+    r_html = markdown.markdown(r.text)
+    return(render_template("q1_reply.html",r=r_html))
 
 
 @app.route("/faq", methods=["GET","POST"])  

@@ -5,7 +5,12 @@
 <body>
     <div class="container">
         <h2>Reply:  </h2>
-        <p><h6> {{r}}</h6>
+        <p>
+            <h6> 
+                {% block body %}
+                {{r | safe }}
+                {% endblock %}
+            </h6>
         </p>
         <form action="/" method="POST">
             <p><input type="submit" value="Main"></p>
