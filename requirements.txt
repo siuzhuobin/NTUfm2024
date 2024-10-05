@@ -1,8 +1,5 @@
 flask
 gunicorn
 google.generativeai
-<<<<<<< HEAD
 textblob
-=======
 markdown
->>>>>>> 4071e64e0ae24c97e3ca0f2396b996ffb73e24bb
